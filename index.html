@@ -1,0 +1,55 @@
+
+<html>
+<body>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script src="js/autocompleteJs.js" charset="utf-8"></script>
+<style>
+.ui-autocomplete {list-style: none;padding: 0;margin: 0;display: block;outline: none;position: absolute;top: 0;left: 0;cursor: default;z-index: 100;overflow-y: auto;overflow-x: hidden;color: #000;max-height: 100px;border: 1px solid #aaaaaa;background: #ffffff;}
+.ui-autocomplete .ui-menu-item {  position: relative;  margin: 0;  padding: 3px 5px 3px 5px;  cursor: pointer;  min-height: 0;}
+.ui-helper-hidden-accessible { display: none;}
+.ui-autocomplete .ui-menu-item:hover {background: #eee;}
+</style>
+
+<div class="all">
+  <div class="leftpart">
+
+
+      <form name="form1">
+      <input name= counrtychoose type="text" id= "countyAutoComplete" placeholder="Write the country" >
+      <input type="text" id="countryParameter" placeholder="Write the parameter" >
+      <input id="BcountryCh" type="button" value="Country details" onclick="postResults()">
+      <!--<button id="BcountryCh" onclick="postResults()">button</button>-->
+      </form>
+      <script type="text/javascript">
+
+        let couFromStorage = localStorage.getItem('country');
+        let polFromStorage = localStorage.getItem('polution');
+        let couInput = document.getElementById('countyAutoComplete');
+        couInput.value = couFromStorage;
+        let polInput = document.getElementById('countryParameter');
+        polInput.value = polFromStorage;
+      </script>
+
+
+
+
+  </div>
+<div id="centralpart">
+  <ul id="cities-list">
+
+  </ul>
+  <span>central part </span>
+  <button onclick="hideDiv()">hide</button>
+</div>
+<div id="rightpart">
+<ul id="city-description">
+
+
+</ul>
+  <span>rightpart </span>
+</div>
+</div>
+</body>
+</html>
